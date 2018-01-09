@@ -1,0 +1,22 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "In this repository I keep some of my algorithms I enjoyed being developing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItamarSerafim/algorithms.git"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "Itamar Serafim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItamarSerafim/algorithms/issues"
+  },
+  "homepage": "https://github.com/ItamarSerafim/algorithms#readme"
+}
