@@ -1,3 +1,7 @@
+
+//*********** CREATE DATA OUT OF BRANDS NAMES *********** 
+
+//Create site urls, e-mail, twitter and facebook accounts out of brand names.
 var brands = 
 `Apple
 Google
@@ -104,4 +108,17 @@ var emails = brands.map(item => 'contact@'+item.replace(/[\s\W]+/g, '').toLowerC
 var sites = brands.map(item => 'https://www.'+item.replace(/[\s\W]+/g, '').toLowerCase()+'.com');
 var facebookAccounts = brands.map(item => 'https://www.facebook.com/'+item.replace(/[\s\W]+/g, '').toLowerCase()+'');
 var twitterAccounts = brands.map(item => 'https://twitter.com/'+item.replace(/[\s\W]+/g, '').toLowerCase()+'');
-facebookAccounts.join(';\n')
+facebookAccounts.join('\n');
+
+
+//*********** GET DATA FROM PAGE*********** 
+
+//Get text from ul elements having class .job-titles:
+var jobTitlesArray = []
+var jobTitlesUls = document.querySelectorAll('.job-titles');
+jobTitlesUls.forEach((ul, index)=>{
+	jobTitlesArray = [...jobTitlesArray, ...ul.innerText.split(/\n/g)]
+   console.log(ul.innerText.split(/\n/g), index)
+});
+JSON.stringify(jobTitlesArray);
+//Add script for getting data from page
