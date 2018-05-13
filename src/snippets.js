@@ -122,3 +122,17 @@ jobTitlesUls.forEach((ul, index)=>{
 });
 JSON.stringify(jobTitlesArray);
 //Add script for getting data from page
+
+//*********** MAKE NESTED OBJECT FROM ARRAY *********** 
+var menus = [
+	{title: 'menu level-1'},
+	{title: 'menu level-2'},
+	{title: 'menu level-3'},
+	{title: 'menu level-4'},
+]
+
+var i=0;
+menus.reverse().reduce((a,b) => {
+	b.children = a; 
+	return b;
+});
