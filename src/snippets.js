@@ -136,3 +136,33 @@ menus.reverse().reduce((a,b) => {
 	b.children = a; 
 	return b;
 });
+
+
+//*********** PAIRS THAT MAKE A SUM *********** 
+var numbersA = [1,2,3,9];
+var numbersB = [1,2,4,4];
+var numbersC = [3,2,5,7,0,1,8]
+function findPairsThatSummup(numbers, sum){
+	let numbersPair = [];
+	let pairSignal = {};
+	numbers.forEach((numL1, idxL1) =>{
+		let cSum = numL1;
+		numbers.forEach((numL2, idxL2) =>{
+			if(idxL2 == idxL1) return;
+            let inSum = numL1 + numL2;
+			if(inSum == sum) {
+				let pairSig = Math.min(idxL1,idxL2) + Math.max(idxL1,idxL2);
+				if(pairSignal[pairSig]) return;
+				pairSignal[pairSig] = true;
+				numbersPair.push([{number: numL1, index: idxL1}, {number: numL2, index: idxL2}]);
+            }
+        });
+	});
+	//console.log(pairSignal)
+	return numbersPair;
+}
+
+
+console.log(findPairsThatSummup(numbersA, 8));
+console.log(findPairsThatSummup(numbersB, 8));
+console.log(findPairsThatSummup(numbersC, 8));
