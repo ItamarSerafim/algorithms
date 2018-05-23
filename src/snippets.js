@@ -139,9 +139,11 @@ menus.reverse().reduce((a,b) => {
 
 
 //*********** PAIRS THAT MAKE A SUM *********** 
-var numbersA = [1,2,3,9];
-var numbersB = [1,2,4,4];
-var numbersC = [3,2,5,7,0,1,8]
+var numbersA = [4,2,3,1];
+var numbersB = [1,2,5,5];
+var numbersC = [3,2, 8,5,7,0,1,10];
+/*
+// A more time consuming algorithm
 function findPairsThatSummup(numbers, sum){
 	let numbersPair = [];
 	let pairSignal = {};
@@ -160,9 +162,24 @@ function findPairsThatSummup(numbers, sum){
 	});
 	//console.log(pairSignal)
 	return numbersPair;
+}*/
+// A more robust implementation. Still giving me some duplicate pairs
+function findPairsThatSummup(numbers, sum){
+	let numbersPair = [];
+    var l = numbers.length;
+    for(let i=l; i >= 0; i--){
+        let num = numbers[i];
+        let complement = sum - num;
+        if(numbers.indexOf(complement, i+1) != -1){
+			numbersPair.push([num, complement]);
+        }
+        //seenNumbers.push(num);
+    }
+	return numbersPair;
 }
 
 
-console.log(findPairsThatSummup(numbersA, 8));
-console.log(findPairsThatSummup(numbersB, 8));
-console.log(findPairsThatSummup(numbersC, 8));
+
+console.log(findPairsThatSummup(numbersA, 10));
+console.log(findPairsThatSummup(numbersB, 10));
+console.log(findPairsThatSummup(numbersC, 10));
