@@ -183,3 +183,39 @@ function findPairsThatSummup(numbers, sum){
 console.log(findPairsThatSummup(numbersA, 10));
 console.log(findPairsThatSummup(numbersB, 10));
 console.log(findPairsThatSummup(numbersC, 10));
+
+
+//*********** FIND FIRST RECURING CHARACTER IN A STRING *********** 
+//Return recurring character in a string
+//TODO's: 
+// 1) Test performance with storing seen characters in a hash. 
+// 2) Test performance with storing seen characters in an array. 
+// 2) Change it for finding the first non recuring charracter in a string.
+
+/*function firstRecuringChar(str){
+	var l = str.length;
+	for(let i = 0; i <= l-1; i++){
+		let cChar =  str[i];
+		for(let j = 0; j < i; j++){
+			if(str[j] == cChar) return str[j];
+		}
+	}
+	return null;
+}
+*/
+// Version stored in a hash
+function firstRecuringChar(str){
+	var l = str.length;
+	let seenChars = {};
+	for(let i = 0; i <= l-1; i++){
+		let cChar =  str[i];
+		if(cChar in seenChars) return cChar;
+		seenChars[cChar] = '';
+	}
+	return null;
+}
+
+
+console.log(firstRecuringChar('AICIBCA'));//I
+console.log(firstRecuringChar('AICDBEA'));//A
+console.log(firstRecuringChar('AICDBE'));//null
