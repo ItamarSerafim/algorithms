@@ -219,3 +219,7 @@ function firstRecuringChar(str){
 console.log(firstRecuringChar('AICIBCA'));//I
 console.log(firstRecuringChar('AICDBEA'));//A
 console.log(firstRecuringChar('AICDBE'));//null
+
+
+//*********** GET EACH ELEMENT IN AN SVG ELEMENT D ATTRIBUTE*********** 
+'M 131.53571,68.70238 C 119.44047,114.05952 162.52976,106.5 162.52976,106.5 c 0,0 35.52976,-38.553572 9.82738,-40.82143 -25.70238,-2.267857 -15.11905,27.214285 -40.82143,3.02381 z'.match(/[A-Za-z][\s+\d+,\.-]+/g)
