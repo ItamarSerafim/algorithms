@@ -1,0 +1,6 @@
+Git cheatsheet
+https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
+https://www.git-tower.com/blog/git-cheat-sheet/
+
+https://stackblitz.com/@ItamarSerafim
+Meu stackblitz: https://stackblitz.com/edit/itamar-serafim-angular6
