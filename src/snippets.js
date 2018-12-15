@@ -227,8 +227,19 @@ console.log(firstRecuringChar('AICDBE'));//null
 
 
 //*********** ROTATE AN ARRAY a TO THE LEFT d POSSITIONS *********** 
-function rotateLeft(a, d) {
-    const l = a.length;
-    const n = d % l;
-    return [...a.slice(n, l), ...a.slice(0, n)];
-}
+(function(){
+
+    const a = 
+    // '41 73 89 7 10 1 59 58 84 77 77 97 58 1 86 58 26 10 86 51'
+	'1 2 3 4 5'.split(/\D/g);
+    const d = 117;
+    // Prints 3,4,5,1,2
+    console.log( rotateLeft(a, d).join(',')	);
+	
+
+    function rotateLeft(a, d) {
+        const l = a.length;
+        const n = d % l;
+        return [...a.slice(n, l), ...a.slice(0, n)];
+    }	
+}());
