@@ -286,3 +286,43 @@ console.log(firstRecuringChar('AICDBE'));//null
 	console.log(sockMerchant(myArr.length, myArr));
 
 })()
+
+//*********** COUNT VALLEYS *********** 
+/*
+	In this algorithm steps are represented by the letters D, for step down and U, for step up.
+	I count a valley each tiem when steps go down bellow 0 and then go up to 0 or greater zero.
+*/
+
+(function(){
+	let steps = 
+// 		'DDUUUUDD'; // Test case of one valley
+// 		'DDUUUUDDDDUU';// Test case of two valleys
+		'DDUUUUDDDDUUDDUUUUDDDDUUU';// Test case of four valleys
+
+	function countingValleys(s){
+		let level = 0;
+		let stepsArr = s.split('').reverse();
+		let countValley = 0;
+		let vDir;
+ 		let step;
+		
+ 		for (;step = stepsArr.pop();){
+			level += step === 'U' ? 1 : -1;
+			if(level < 0) { 
+				vDir = 'descending';
+			}
+
+			if(vDir === 'descending' && level >= 0){ 
+				countValley++; 
+				vDir = '';
+			}
+		}
+
+		return countValley;
+
+	}
+
+	console.log('The sequence has ', countingValleys(steps), ' valleys')
+
+})()
+
