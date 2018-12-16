@@ -243,3 +243,46 @@ console.log(firstRecuringChar('AICDBE'));//null
         return [...a.slice(n, l), ...a.slice(0, n)];
     }	
 }());
+
+
+
+//*********** MATCH(AND COUNT) PAIRS OF SOCKS BY COLOR *********** 
+/*
+	In this algorithm colors are represented by number.
+	Items in an array represent a sock, the color of the sock is represented by item value.
+	I count the number of pair of sock in the array by matching its colors
+*/
+(function(){
+	'use strict';
+	let myArr = 
+// 		[10, 20, 20, 10, 10, 30, 50, 10, 20];
+// 	[6, 10, 20, 20, 10, 10, 30, 50, 10, 20, 3,3,3,3,3,7,7,7,6,6];
+	[3, 10, 20, 20, 10, 3,3,3,3, 10, 20, 20, 10, 3,3,3];
+
+	function sockMerchant(n, ar) {
+		let pairCount = 0;
+		let color;
+// 	debugger;
+		for (; color = ar.pop();){			
+
+					console.log('\t\tar02:: ', ar);
+			for(let j = 0; j < ar.length; j++){ 
+				if(ar[j] === color) {
+					
+					console.log('\t\tar01:: ', ar);
+					console.log('\tColors in positions: ', color, ' and ', ar.splice(j, 1), ' match');
+					console.log('\t\tar02:: ', ar);
+					;
+					pairCount++;
+					break;
+                }
+			}
+		}
+
+					console.log('\t\tRemainder of ar: ', ar);
+	return pairCount;
+    }
+
+	console.log(sockMerchant(myArr.length, myArr));
+
+})()
